@@ -1,9 +1,9 @@
 module.exports = {
 	entry: {
-		entry_1: ["./entry.js"]
+		bootstrap: ["./javascripts/bootstrap.js"]
 	},
 	output: {
-		path: "./build",
+		path: "./public/javascripts",
 		filename: "[name].js"
 	},
 	module: {
@@ -14,11 +14,11 @@ module.exports = {
 
 			 // Needed for the css-loader when [bootstrap-webpack](https://github.com/bline/bootstrap-webpack)
 			 // loads bootstrap's css.
-			 { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&mimetype=application/font-woff" },
-			 { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&mimetype=application/font-woff2" },
-			 { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=application/octet-stream" },
-			 { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
-			 { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=image/svg+xml" }
+			 { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?name=../fonts/[name].[ext]&limit=10000&mimetype=application/font-woff" },
+			 { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?name=../fonts/[name].[ext]&limit=10000&mimetype=application/font-woff2" },
+			 { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?name=../fonts/[name].[ext]&limit=10000&mimetype=application/octet-stream" },
+			 { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file?name=../fonts/[name].[ext]" },
+			 { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?name=../fonts/[name].[ext]&limit=10000&mimetype=image/svg+xml" }
 		]
 	}
 };
